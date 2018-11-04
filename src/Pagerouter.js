@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Router, Route, Switch, Redirect } from 'react-static';
+import { Route, Switch, Redirect } from 'react-static';
 
 import firebase from 'firebase';
 
@@ -9,25 +9,41 @@ import { logUserState } from './redux/action';
 
 import Home from './home/Home';
 import Login from './login/Login';
+import Prerender from './home/Prerender';
 
 class Pagerouter extends React.Component
 {
-    componentDidMount()
+    constructor( props )
+    {
+        super( props );
+
+        this.state = {
+            rendered: false,
+            allowRedirect: false
+        }
+    }
+
+    componentWillMount()
     {
       firebase.auth().onAuthStateChanged( user => {
         this.props.logUserState( user );
+        this.setState({
+            rendered: true
+        });
       });
     }
   
     render()
     {
         return (
-            <Router>
-                <Switch>
-                    <Route exact path='/' render={ () => this.props.user ? <Home /> : <Login /> } />
-                    <Redirect from='/*' to='/' />
-                </Switch>
-            </Router>
+            <Switch>
+                {
+                    this.state.rendered 
+                    && <Route path='/home' render={ () => this.props.user === null ? <Login /> : <Home /> } />
+                }
+                <Route path='/home' component={Prerender} />
+                <Redirect from='/*' to='/home' />
+            </Switch>
         );
     }
 }

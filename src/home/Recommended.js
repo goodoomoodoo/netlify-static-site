@@ -2,6 +2,8 @@ import React from 'react';
 
 import firebase from 'firebase';
 
+import { withRouter } from 'react-static';
+
 import '../style/Recommended.css';
 
 class Recommended extends React.Component
@@ -31,9 +33,9 @@ class Recommended extends React.Component
         });
     }
 
-    handleClick()
+    handleClick( e )
     {
-
+        this.props.history.push( `/home/room/${e.target.id}`);
     }
 
     render()
@@ -41,17 +43,17 @@ class Recommended extends React.Component
         return (
             <div className='recommended'>
                 <ul>
-               {
+                {
                    this.state.contents !== null 
                    &&
                    this.state.contents.map( ( content, index ) => (
-                        <li key={index} onClick={this.handleClick}>{`${content.title}`}</li>   
+                        <li key={index} id={index} onClick={this.handleClick.bind(this)}>{`${content.title}`}</li>   
                    ))
-               }
+                }
                </ul>
             </div>
         );
     }
 }
 
-export default Recommended;
+export default withRouter( Recommended );

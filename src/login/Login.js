@@ -10,10 +10,6 @@ import '../style/Login.css';
 
 class Login extends React.Component
 {
-    componentDidMount()
-    {
-    }
-
     handleLogin()
     {
         let provider = new firebase.auth.GoogleAuthProvider();
