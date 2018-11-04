@@ -6,11 +6,11 @@ class Navbar extends React.Component
 {
     render()
     {
-        return (
-            <div className='navbar'>
-            
-            </div>
-        );
+      return (
+          <div className='navbar'>
+          <div className="nav-wrapper"><div className="nav-title">Roasted</div></div>
+          </div>
+      );
     }
 }
 
