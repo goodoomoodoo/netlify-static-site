@@ -35,9 +35,9 @@ class Home extends React.Component
             <div className='home'>
                 <Navbar />
                 <Switch>
-                    <Route path={`${this.props.match.url}/room/:id`} component={Room} />
-                    <Route exact path={`${this.props.match.url}`} component={Recommended} />
-                    <Redirect to='/home' />
+                    <Route exact path={`/`} component={Recommended} />
+                    <Route path={`/room/:id`} component={Room} />
+                    {/* <Redirect to='/home' /> */}
                 </Switch>
 
                 <button onClick={this.handleLogout}>Log Out</button>

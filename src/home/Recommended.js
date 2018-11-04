@@ -35,7 +35,7 @@ class Recommended extends React.Component
 
     handleClick( e )
     {
-        this.props.history.push( `/home/room/${e.target.id}`);
+        this.props.history.push( `/room/${e.target.id}`);
     }
 
     render()

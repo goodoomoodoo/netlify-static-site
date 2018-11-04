@@ -39,10 +39,9 @@ class Pagerouter extends React.Component
             <Switch>
                 {
                     this.state.rendered 
-                    && <Route path='/home' render={ () => this.props.user === null ? <Login /> : <Home /> } />
+                    && <Route path='/' render={ () => this.props.user === null ? <Login /> : <Home /> } />
                 }
-                <Route path='/home' component={Prerender} />
-                <Redirect from='/*' to='/home' />
+                <Route path='/' component={Prerender} />
             </Switch>
         );
     }
