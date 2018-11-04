@@ -41,7 +41,6 @@ class Home extends React.Component
                 <Switch>
                     <Route path={`/room/:id`} component={Room} />
                     <Route exact path={`/`} component={Recommended} />
-
                 </Switch>
 
 
