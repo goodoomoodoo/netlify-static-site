@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Session from './Session';
+
 import '../style/Room.css';
 
 class Room extends React.Component
@@ -8,7 +10,7 @@ class Room extends React.Component
     {
         return (
             <div className='room'>
-                Room
+                <Session />
             </div>
         );
     }
