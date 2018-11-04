@@ -45,6 +45,10 @@ class Lobby extends React.Component
     {
         return (
             <div className='lobby'>
+            <div className="roast-feed-wrapper">
+              <div className="main-image"><p>Main Image</p></div>
+
+            </div>
                 <ul>
                     {
                         this.state.comments === undefined

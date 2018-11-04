@@ -20,6 +20,18 @@
   height: 105px;
   background-color: #2d3047;
   transition: 0.3s all;
+  color: #fafafa;
+
+  margin-top:10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 600px;
+  text-transform: uppercase;
+}
+
+.roast-element p {
+  text-align: center;
+  margin-top:10px;
 }
 
 .roast-element:hover {

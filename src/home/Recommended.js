@@ -47,7 +47,7 @@ class Recommended extends React.Component
                    this.state.contents !== null
                    &&
                    this.state.contents.map( ( content, index ) => (
-                        <li key={index} id={index} onClick={this.handleClick.bind(this)}>{`${content.title}`}</li>
+                        <li className='roast-list-button' key={index} id={index} onClick={this.handleClick.bind(this)}>{`${content.title}`}</li>
                    ))
                 }
                </ul>

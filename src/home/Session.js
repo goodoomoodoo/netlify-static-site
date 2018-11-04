@@ -70,7 +70,7 @@ class Session extends React.Component
                 commentId: commentId,
                 like: 0
             });
-        
+
         this.props.hasCommented();
     }
 
@@ -81,6 +81,13 @@ class Session extends React.Component
 
         return (
             <div className='session'>
+            <div className="roast-feed-wrapper">
+              <div className="feed-preview">Feed Preview</div>
+              <div className="roast-element"><p>Image</p></div>
+              <div className="roast-element"><p>Image</p></div>
+              <div className="roast-element"><p>Image</p></div>
+
+            </div>
                 <div className='counter'>{`${timeSecCount}`}</div>
                 {
                     this.state.canComment
@@ -94,8 +101,8 @@ class Session extends React.Component
                             <h1>Time is up</h1>
                             <button onClick={this.props.hasCommented}>Continue</button>
                         </div>
-         
-                }       
+
+                }
             </div>
         );
     }

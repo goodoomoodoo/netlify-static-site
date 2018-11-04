@@ -1,0 +1,25 @@
+.roast-list-button {
+padding:20px 30px;
+background-color: #256eff;
+transition: 0.3s all;
+display: inline-block;
+color: #fafafa;
+font-family: 'Montserrat', sans-serif;
+font-weight : 400;
+margin-top:40px;
+border-radius:4px;
+font-size: 20px;
+/* width: 400px; */
+text-align: center;
+
+}
+
+.recommended {
+    max-width: 435px;
+    margin: auto;
+}
+
+.roast-list-button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
