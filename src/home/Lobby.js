@@ -13,6 +13,8 @@ class Lobby extends React.Component
         this.state = {
             comments: undefined
         };
+
+        this.likeComment = this.likeComment.bind( this );
     }
 
     componentWillMount()
@@ -31,6 +33,14 @@ class Lobby extends React.Component
             })
     }
 
+    likeComment(e)
+    {
+        firebase.database().ref(`entry/${this.props.matchId}/comment/${e.target.name}`)
+            .update({
+                like: this.state.comments[e.target.id].like + 1
+            })
+    }
+
     render()
     {
         return (
@@ -39,7 +49,11 @@ class Lobby extends React.Component
                     {
                         this.state.comments === undefined
                         || this.state.comments.map( ( context, index ) => (
-                            <li key={index}>{context.text}</li>
+                            <li key={index}>
+                                <div>{context.text}</div>
+                                <div>{context.like}</div>
+                                <button name={context.commentId} id={index} onClick={this.likeComment}>like</button>
+                            </li>
                         ))
                     }
                 </ul>

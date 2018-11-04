@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 
 import { withRouter } from 'react-static';
 
+import uniqid from 'uniqid';
+
 import '../style/Session.css';
 
 class Session extends React.Component
@@ -59,10 +61,14 @@ class Session extends React.Component
 
     handleSubmit()
     {
+        let commentId = uniqid();
         firebase.database().ref(`entry/${this.props.matchId}/comment`)
-            .push({
+            .child(`${commentId}`)
+            .set({
                 user: this.props.user.displayName,
-                text: this.state.comment
+                text: this.state.comment,
+                commentId: commentId,
+                like: 0
             });
         
         this.props.hasCommented();
