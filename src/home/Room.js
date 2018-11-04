@@ -23,7 +23,7 @@ class Room extends React.Component
 
     redToLobby()
     {
-        this.props.history.push(`home/room/${this.props.match.params.id}/lobby`);
+        this.props.history.push(`/home/room/${this.props.match.params.id}/lobby`);
     }
 
     hasCommented()
