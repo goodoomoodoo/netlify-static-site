@@ -21,8 +21,8 @@ class Recommended extends React.Component
     {
         let entryRef = firebase.database().ref( 'entry' );
 
-        entryRef.once( 'value', snap => {  
-            
+        entryRef.once( 'value', snap => {
+
             let arr = [];
 
             snap.forEach( innerSnap => {
@@ -35,7 +35,7 @@ class Recommended extends React.Component
 
     handleClick( e )
     {
-        this.props.history.push( `/home/room/${e.target.id}`);
+        this.props.history.push( `/room/${e.target.id}`);
     }
 
     render()
@@ -44,10 +44,10 @@ class Recommended extends React.Component
             <div className='recommended'>
                 <ul>
                 {
-                   this.state.contents !== null 
+                   this.state.contents !== null
                    &&
                    this.state.contents.map( ( content, index ) => (
-                        <li key={index} id={index} onClick={this.handleClick.bind(this)}>{`${content.title}`}</li>   
+                        <li key={index} id={index} onClick={this.handleClick.bind(this)}>{`${content.title}`}</li>
                    ))
                 }
                </ul>

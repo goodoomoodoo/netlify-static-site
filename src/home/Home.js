@@ -43,9 +43,9 @@ class Home extends React.Component
 
                             </div>
                 <Switch>
-                    <Route path={`${this.props.match.url}/room/:id`} component={Room} />
-                    <Route exact path={`${this.props.match.url}`} component={Recommended} />
-                    <Redirect to='/home' />
+                    <Route path={`/room/:id`} component={Room} />
+                    <Route exact path={`/`} component={Recommended} />
+
                 </Switch>
 
 

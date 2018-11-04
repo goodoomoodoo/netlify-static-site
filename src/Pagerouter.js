@@ -32,17 +32,16 @@ class Pagerouter extends React.Component
         });
       });
     }
-  
+
     render()
     {
         return (
             <Switch>
                 {
-                    this.state.rendered 
-                    && <Route path='/home' render={ () => this.props.user === null ? <Login /> : <Home /> } />
+                    this.state.rendered
+                    && <Route path='/' render={ () => this.props.user === null ? <Login /> : <Home /> } />
                 }
-                <Route path='/home' component={Prerender} />
-                <Redirect from='/*' to='/home' />
+                <Route path='/' component={Prerender} />
             </Switch>
         );
     }
@@ -51,7 +50,7 @@ class Pagerouter extends React.Component
 const mapDispatchToProps = dispatch => ({
     logUserState: user => dispatch( logUserState( user ) )
   });
-  
+
 const mapStateToProps = state => ({
     user: state.user
 });
