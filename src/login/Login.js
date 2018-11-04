@@ -1,27 +1,29 @@
 import React from 'react';
 
-import netlifyIdentity from 'netlify-identity-widget';
+import firebase from 'firebase';
+
+import { connect } from 'react-redux';
+import { logUserState } from '../redux/action';
 
 import '../style/Login.css';
 
 
 class Login extends React.Component
 {
-    constructor() {
-        super()
-    
-        this.handleLogin = this.handleLogin.bind(this)
-        
-    }
     componentDidMount()
     {
-
-        netlifyIdentity.on('login', () => console.log('login') );
     }
 
     handleLogin()
     {
-        netlifyIdentity.open();
+        let provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup( provider )
+            .then( res => {
+                this.props.loginUser( res.user );
+            })
+            .catch( err => {
+                console.log( err.message );
+            })
     }
 
     render()
@@ -35,4 +37,8 @@ class Login extends React.Component
     }
 }
 
-export default Login;
+const mapDispatchToProps = dispatch => ({
+    loginUser: user => dispatch( logUserState( user ) )
+});
+
+export default connect( mapDispatchToProps )( Login );
