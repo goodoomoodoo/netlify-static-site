@@ -52,8 +52,8 @@ const mapDispatchToProps = dispatch => ({
     logUserState: user => dispatch( logUserState( user ) )
   });
   
-  const mapStateToProps = state => ({
+const mapStateToProps = state => ({
     user: state.user
-  });
+});
 
 export default connect( mapStateToProps, mapDispatchToProps )( Pagerouter );

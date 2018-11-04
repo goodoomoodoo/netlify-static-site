@@ -2,6 +2,8 @@ import React from 'react';
 
 import firebase from 'firebase';
 
+import { connect } from 'react-redux';
+
 import { withRouter } from 'react-static';
 
 import '../style/Session.css';
@@ -19,14 +21,14 @@ class Session extends React.Component
             comment: ''
         }
 
-        this.timer = undefined;;
+        this.timer = undefined;
     }
 
     componentDidMount()
     {
         this.timer = setInterval( this.tick.bind(this), 50 );
 
-        console.log( this.props.match.params );
+        console.log( this.props.user );
     }
 
     componentWillUnmount()
@@ -36,7 +38,7 @@ class Session extends React.Component
 
     tick()
     {
-        this.setState({ clock: 5000 - new Date() + this.state.start });
+        this.setState({ clock: 10000 - new Date() + this.state.start });
 
         if( this.state.clock <= 0 )
         {
@@ -57,11 +59,13 @@ class Session extends React.Component
 
     handleSubmit()
     {
-        firebase.database().ref(`entry/${this.props.match.params.id}/comment`)
+        firebase.database().ref(`entry/${this.props.matchId}/comment`)
             .push({
-                user: 'user',
-                text: 'something'
+                user: this.props.user.displayName,
+                text: this.state.comment
             });
+        
+        this.props.hasCommented();
     }
 
     render()
@@ -74,18 +78,25 @@ class Session extends React.Component
                 <div className='counter'>{`${timeSecCount}`}</div>
                 {
                     this.state.canComment
-                    && <div>Go</div>
                     && <div>
                             <form>
                                 <input placeholder='Roast On!' name='comment' value={this.state.comment} onChange={this.handleComment.bind( this )} />
                             </form>
+                            <button onClick={this.handleSubmit.bind( this )}>Send</button>
                         </div>
-                    || <div>Time is up</div>
-                }
-                <button onClick={this.handleSubmit.bind( this )}>Send</button>
+                    ||  <div>
+                            <h1>Time is up</h1>
+                            <button onClick={this.props.hasCommented}>Continue</button>
+                        </div>
+         
+                }       
             </div>
         );
     }
 }
 
-export default withRouter( Session );
+const mapStateToProps = state => ({
+    user: state.user
+});
+
+export default withRouter( connect( mapStateToProps )( Session ) );
