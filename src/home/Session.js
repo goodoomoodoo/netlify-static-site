@@ -71,6 +71,16 @@ class Session extends React.Component
                 like: 0
             });
 
+        firebase.database().ref(`entry/${this.props.matchId}/commentCount`)
+            .once( 'value', snap => { 
+                firebase.database().ref(`entry/${this.props.matchId}`)
+                    .update({
+                        commentCount: snap.val() + 1
+                    });
+             });
+
+        
+
         this.props.hasCommented();
     }
 

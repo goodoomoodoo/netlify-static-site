@@ -31,6 +31,8 @@ class Recommended extends React.Component
 
             this.setState({ contents: arr });
         });
+
+        
     }
 
     handleClick( e )
@@ -42,6 +44,7 @@ class Recommended extends React.Component
     {
         return (
             <div className='recommended'>
+            <div className="feed-preview">Recommended</div>
                 <ul>
                 {
                    this.state.contents !== null

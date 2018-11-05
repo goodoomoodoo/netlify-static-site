@@ -36,14 +36,12 @@ class Home extends React.Component
                 <Navbar />
                 <button className="logout-button" onClick={this.handleLogout}>Log Out</button>
                 <div className="roast-feed-wrapper">
-                  <div className="feed-preview">Feed Preview</div>
+                  
                 </div>
                 <Switch>
                     <Route path={`/room/:id`} component={Room} />
                     <Route exact path={`/`} component={Recommended} />
                 </Switch>
-
-
             </div>
         );
     }
