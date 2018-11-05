@@ -8,7 +8,7 @@ class Navbar extends React.Component
     {
       return (
           <div className='navbar'>
-          <div className="nav-wrapper"><div className="nav-title">Roasted</div></div>
+          <div className="nav-wrapper"><div className="nav-title">Roasted</div><button className="logout-button" onClick={this.handleLogout}>Log Out</button></div>
           </div>
       );
     }

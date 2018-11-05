@@ -5,6 +5,8 @@
   left: 0;
   width: 100%;
   padding: 10px 0 10px 40px;
+  display: grid;
+  grid-template-columns: 20% auto 20% 
 }
 
 .nav-title {
@@ -17,5 +19,14 @@
   text-transform: uppercase;
   text-align: left;
   padding-left: 20px;
+  display: inline-block;
   /* font-family: 'Orbitron', sans-serif; */
+  
+}
+
+
+.logout-button {
+  display: inline-block;
+  margin: 0;
+  grid-column-start: 3;
 }
