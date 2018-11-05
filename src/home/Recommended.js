@@ -42,6 +42,9 @@ class Recommended extends React.Component
     {
         return (
             <div className='recommended'>
+            <div className="roast-feed-wrapper">
+              <div className="feed-preview">Recommended Roasts</div>
+            </div>
                 <ul>
                 {
                    this.state.contents !== null

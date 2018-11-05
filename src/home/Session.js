@@ -82,11 +82,7 @@ class Session extends React.Component
         return (
             <div className='session'>
             <div className="roast-feed-wrapper">
-              <div className="feed-preview">Feed Preview</div>
-              <div className="roast-element"><p>Image</p></div>
-              <div className="roast-element"><p>Image</p></div>
-              <div className="roast-element"><p>Image</p></div>
-
+              <div className="roast-image"><p>Image</p></div>
             </div>
                 <div className='counter'>{`${timeSecCount}`}</div>
                 {
