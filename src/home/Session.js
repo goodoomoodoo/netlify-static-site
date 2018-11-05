@@ -97,13 +97,13 @@ class Session extends React.Component
                 <div className='counter'>{`${timeSecCount}`}</div>
                 {
                     this.state.canComment
-                    && <div>
+                    && <div className='session-comment-section'>
                             <form>
-                                <input placeholder='Roast On!' name='comment' value={this.state.comment} onChange={this.handleComment.bind( this )} />
+                                <textarea rows='4' placeholder='Roast On!' name='comment' value={this.state.comment} onChange={this.handleComment.bind( this )} />
                             </form>
                             <button onClick={this.handleSubmit.bind( this )}>Send</button>
                         </div>
-                    ||  <div>
+                    ||  <div className='session-comment-section'>
                             <h1>Time is up</h1>
                             <button onClick={this.props.hasCommented}>Continue</button>
                         </div>
