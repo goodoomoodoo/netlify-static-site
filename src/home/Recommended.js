@@ -37,7 +37,7 @@ class Recommended extends React.Component
 
     handleClick( e )
     {
-        this.props.history.push( `/room/${e.target.id}`);
+        this.props.history.push( `/room/${e.target.id}/${e.target.name}`);
     }
 
     render()
@@ -52,12 +52,12 @@ class Recommended extends React.Component
                    this.state.contents !== null
                    &&
                    this.state.contents.map( ( content, index ) => (
-                        <li className='roast-list-button' key={index} id={index} onClick={this.handleClick.bind(this)}>
-                            <div id={index} className='roast-list-title'>{`${content.title}`}</div>
-                            <div>comments {`${content.commentCount}`}</div>
+                        <li className='roast-list-button' key={index}>
+                            <div className='roast-list-title'>{`${content.title}`}</div>
+                            <div className='roast-list-comment-count'>comments {`${content.commentCount}`}</div>
                             <div>
-                                <button className='roast-list-select-btn'>session</button>
-                                <button>lobby</button>
+                                <button onClick={this.handleClick.bind(this)} id={index} name='session' className='roast-list-select-btn'>session</button>
+                                <button onClick={this.handleClick.bind(this)} id={index} name='lobby' className='roast-list-select-btn'>lobby</button>
                             </div>
                         </li>
                    ))
