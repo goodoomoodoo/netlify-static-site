@@ -55,6 +55,10 @@ class Recommended extends React.Component
                         <li className='roast-list-button' key={index} id={index} onClick={this.handleClick.bind(this)}>
                             <div id={index} className='roast-list-title'>{`${content.title}`}</div>
                             <div>comments {`${content.commentCount}`}</div>
+                            <div>
+                                <button className='roast-list-select-btn'>session</button>
+                                <button>lobby</button>
+                            </div>
                         </li>
                    ))
                 }
