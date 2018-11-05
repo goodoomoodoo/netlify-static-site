@@ -33,13 +33,7 @@ class Home extends React.Component
     {
         return (
             <div className='home'>
-                <Navbar />
-                <button className="logout-button" onClick={this.handleLogout}>Log Out</button>
-
-                <div className="roast-feed-wrapper">
-
-                </div>
-
+                <Navbar handleLogout={this.handleLogout}/>
                 <Switch>
                     <Route path={`/room/:id`} component={Room} />
                     <Route exact path={`/`} component={Recommended} />
