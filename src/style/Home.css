@@ -1,7 +1,7 @@
 
 .roast-feed-wrapper {
   max-width: 1000px;
-  margin: 135px auto 0 auto;
+  margin: 85px auto 0 auto;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -21,7 +21,6 @@
   background-color: #2d3047;
   transition: 0.3s all;
   color: #fafafa;
-
   margin-top:10px;
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;

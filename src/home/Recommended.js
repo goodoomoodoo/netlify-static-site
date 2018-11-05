@@ -32,7 +32,7 @@ class Recommended extends React.Component
             this.setState({ contents: arr });
         });
 
-        
+
     }
 
     handleClick( e )
@@ -44,13 +44,10 @@ class Recommended extends React.Component
     {
         return (
             <div className='recommended'>
-<<<<<<< HEAD
-            <div className="feed-preview">Recommended</div>
-=======
+            
             <div className="roast-feed-wrapper">
               <div className="feed-preview">Recommended Roasts</div>
             </div>
->>>>>>> 69a7b224733f2eeddc056bdf2fd5216c266c5699
                 <ul>
                 {
                    this.state.contents !== null
