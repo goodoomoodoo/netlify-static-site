@@ -35,9 +35,13 @@ class Home extends React.Component
             <div className='home'>
                 <Navbar />
                 <button className="logout-button" onClick={this.handleLogout}>Log Out</button>
+<<<<<<< HEAD
                 <div className="roast-feed-wrapper">
                   
                 </div>
+=======
+
+>>>>>>> 69a7b224733f2eeddc056bdf2fd5216c266c5699
                 <Switch>
                     <Route path={`/room/:id`} component={Room} />
                     <Route exact path={`/`} component={Recommended} />

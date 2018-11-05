@@ -15,8 +15,13 @@ text-align: center;
 }
 
 .recommended {
-    max-width: 435px;
+    max-width: 600px;
     margin: auto;
+}
+
+.recommended ul {
+  display: flex;
+  flex-direction: column;
 }
 
 .roast-list-button:hover {
