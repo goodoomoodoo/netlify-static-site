@@ -6,7 +6,8 @@
   width: 100%;
   padding: 10px 0 10px 40px;
   display: grid;
-  grid-template-columns: 20% auto 20% 
+  grid-template-columns: 20% auto 20% ;
+  z-index: 1;
 }
 
 .nav-title {
