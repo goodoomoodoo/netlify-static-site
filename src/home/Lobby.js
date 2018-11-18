@@ -45,26 +45,24 @@ class Lobby extends React.Component
     {
         return (
             <div className='lobby'>
-            <div className="comments-wrapper">
-<div class="abs">Review the Comments</div>
-<div>
-            <ul>
-                {
-                    this.state.comments === undefined
-                    || this.state.comments.map( ( context, index ) => (
-                        <li className="comments-entry" key={index}>
-                            <div>{context.text}</div>
-                            <div>{context.like}</div>
-                            <button name={context.commentId} id={index} onClick={this.likeComment}>like</button>
-                        </li>
+                <div className="comments-wrapper">
+                    <div className="abs">Review the Comments</div>
+                    <div className='comments-outer-wrapper'>
+                        <ul className="comments-inner-wrapper">
+                            {
+                                this.state.comments === undefined
+                                || this.state.comments.map( ( context, index ) => (
+                                    <li className="comments-entry" key={index}>
+                                        <div className='comments-context'>{context.text}</div>
+                                        <div className='comments-like-count-wrapper'><div className='comments-like-count'>{context.like}</div></div>
+                                        <div className='comments-like-btn'><button name={context.commentId} id={index} onClick={this.likeComment}>like</button></div>
+                                    </li>
 
-                    ))
-                }
-            </ul>
-            </div>
-
-            </div>
-
+                                ))
+                            }
+                        </ul>
+                    </div>
+                </div>
             </div>
         );
     }
