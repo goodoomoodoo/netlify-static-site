@@ -32,7 +32,7 @@ class Pagerouter extends React.Component
         });
       });
     }
-  
+
     render()
     {
         return (
@@ -50,7 +50,7 @@ class Pagerouter extends React.Component
 const mapDispatchToProps = dispatch => ({
     logUserState: user => dispatch( logUserState( user ) )
   });
-  
+
 const mapStateToProps = state => ({
     user: state.user
 });

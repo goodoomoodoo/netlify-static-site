@@ -40,12 +40,12 @@ class Room extends React.Component
         return (
             <div className='room'>
                 <Switch>
-                    <Route path={`${this.props.match.url}/session`} render={ props => <Session {... props} 
+                    <Route path={`${this.props.match.url}/session`} render={ props => <Session {... props}
                         hasCommented={this.hasCommented.bind(this)} matchId={this.props.match.params.id} />} />
-                    <Route path={`${this.props.match.url}/lobby`} render={ props => <Lobby { ...props } 
+                    <Route path={`${this.props.match.url}/lobby`} render={ props => <Lobby { ...props }
                         matchId={this.props.match.params.id} /> } />
                     {
-                        this.state.commented 
+                        this.state.commented
                         ? <Redirect to={`${this.props.match.url}/lobby`} />
                         : <Redirect to={`${this.props.match.url}/session`} />
                     }

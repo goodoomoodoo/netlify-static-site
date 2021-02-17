@@ -1,9 +1,21 @@
-# React-Static - Blank Example
+# Roasted
 
-This example is a blank version of react-static. It includes::
-- Babel
-- CSS imports
-- Image imports
-- File imports
+This is a 2018 freecodecamp JAMstack Hackathon project.
 
-To get started, run `react-static create` and use the `blank` template.
+## Description
+
+User can log in to Roasted with Google account to roast people. The main page of Roasted shows a list of object to be selected by user.
+The lobby button directs the user to the comment section, and the section button directs the user to the roast section.
+
+Check out the website here ---> [ROASTED](https://trusting-boyd-5972cf.netlify.com/)
+
+## Built With 
+
+* [React-static](https://react-static.js.org)
+* [Netlify](https://netlify.com)
+* [Firebase](https://firebase.google.com)
+
+## Authors
+
+* **Arvin Lin** - [Goodoomoodoo](https://github.com/goodoomoodoo)
+* **Anwana Ntofon** - [Antofon](https://github.com/antofon)

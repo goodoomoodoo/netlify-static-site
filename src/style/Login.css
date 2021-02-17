@@ -1,0 +1,53 @@
+/* NOTE: Fonts */
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat:400,500,500i,600,700,700i|Orbitron');
+
+/* NOTE: colors */
+/* purple: #46237A;
+off-white: #fafafa;
+red: #FF495C; */
+
+
+
+.login
+{
+  background : #46237A;
+  width:430px;
+  height: 240px;
+  margin: 60px auto;
+}
+
+.title {
+  /* font-family: 'Comfortaa', cursive; */
+font-family: 'Montserrat', sans-serif;
+font-weight : bold;
+font-style : italic;
+font-size : 38px;
+color : #fafafa;
+text-transform: uppercase;
+text-align: center;
+padding:10px 0;
+border-bottom: 2px solid #fafafa;
+/* font-family: 'Orbitron', sans-serif; */
+}
+
+button {
+  background : #FF495C;
+  border: 1px solid #FF495C;
+  padding:10px 30px;
+  font-family: 'Montserrat', sans-serif;
+  color: #fafafa;
+  font-size: 20px;
+  transition: 0.3s all;
+  margin-top:50px;
+  width: 200px;
+}
+
+button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.loginButton {
+  display: flex;
+  justify-content: center;
+}

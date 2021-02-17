@@ -21,8 +21,8 @@ class Recommended extends React.Component
     {
         let entryRef = firebase.database().ref( 'entry' );
 
-        entryRef.once( 'value', snap => {  
-            
+        entryRef.once( 'value', snap => {
+
             let arr = [];
 
             snap.forEach( innerSnap => {
@@ -31,23 +31,35 @@ class Recommended extends React.Component
 
             this.setState({ contents: arr });
         });
+
+
     }
 
     handleClick( e )
     {
-        this.props.history.push( `/room/${e.target.id}`);
+        this.props.history.push( `/room/${e.target.id}/${e.target.name}`);
     }
 
     render()
     {
         return (
             <div className='recommended'>
+            <div className="roast-feed-wrapper">
+              <div className="feed-preview">Recommended Roasts</div>
+            </div>
                 <ul>
                 {
-                   this.state.contents !== null 
+                   this.state.contents !== null
                    &&
                    this.state.contents.map( ( content, index ) => (
-                        <li key={index} id={index} onClick={this.handleClick.bind(this)}>{`${content.title}`}</li>   
+                        <li className='roast-list-button' key={index}>
+                            <div className='roast-list-title'>{`${content.title}`}</div>
+                            <div className='roast-list-comment-count'>comments {`${content.commentCount}`}</div>
+                            <div>
+                                <button onClick={this.handleClick.bind(this)} id={index} name='session' className='roast-list-select-btn'>session</button>
+                                <button onClick={this.handleClick.bind(this)} id={index} name='lobby' className='roast-list-select-btn'>lobby</button>
+                            </div>
+                        </li>
                    ))
                 }
                </ul>

@@ -70,7 +70,17 @@ class Session extends React.Component
                 commentId: commentId,
                 like: 0
             });
+
+        firebase.database().ref(`entry/${this.props.matchId}/commentCount`)
+            .once( 'value', snap => { 
+                firebase.database().ref(`entry/${this.props.matchId}`)
+                    .update({
+                        commentCount: snap.val() + 1
+                    });
+             });
+
         
+
         this.props.hasCommented();
     }
 
@@ -81,21 +91,24 @@ class Session extends React.Component
 
         return (
             <div className='session'>
+            <div className="roast-feed-wrapper">
+              <div className="roast-image"><p>Image</p></div>
+            </div>
                 <div className='counter'>{`${timeSecCount}`}</div>
                 {
                     this.state.canComment
-                    && <div>
+                    && <div className='session-comment-section'>
                             <form>
-                                <input placeholder='Roast On!' name='comment' value={this.state.comment} onChange={this.handleComment.bind( this )} />
+                                <textarea rows='4' placeholder='Roast On!' name='comment' value={this.state.comment} onChange={this.handleComment.bind( this )} />
                             </form>
                             <button onClick={this.handleSubmit.bind( this )}>Send</button>
                         </div>
-                    ||  <div>
+                    ||  <div className='session-comment-section'>
                             <h1>Time is up</h1>
                             <button onClick={this.props.hasCommented}>Continue</button>
                         </div>
-         
-                }       
+
+                }
             </div>
         );
     }

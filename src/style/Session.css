@@ -1,0 +1,57 @@
+.counter {
+  position: relative;
+  margin: 0 auto;
+  color: #fafafa;
+  background-color: #ed217c;
+  width:100px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.round {
+  width: 350px;
+  height: 30px;
+  background-color: #2d3047;
+  color: #fafafa;
+  margin:0;
+  padding:0;
+}
+
+.roast-image {
+  width:350px;
+  height: 380px;
+  background-color: #2d3047 !important;
+  transition: 0.3s all;
+  color: #fafafa;
+  /* margin-top:10px; */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: 600px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roast-image p{
+text-align:center;
+}
+
+.session-comment-section {
+  position: relative;
+  width: 50%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 2em;
+}
+
+.session-comment-section textarea {
+  width: 100%;
+  padding: .5em;
+}
+
+.session-comment-section h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #5a5a5a;
+  text-align: center;
+}

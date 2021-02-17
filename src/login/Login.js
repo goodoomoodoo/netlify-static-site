@@ -24,12 +24,15 @@ class Login extends React.Component
 
     render()
     {
-        return (
-            <div className='login'>
-                <div className='login-window'></div>
-                <button onClick={this.handleLogin}>Login</button>
-            </div>
-        );
+      return (
+          <div className='login'>
+
+              <div className='title'>Roasted</div>
+
+              <div className="loginButton">
+              <button onClick={this.handleLogin}>Login with Google</button></div>
+          </div>
+      );
     }
 }
 
